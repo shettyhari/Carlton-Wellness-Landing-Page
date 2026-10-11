@@ -11,6 +11,7 @@
     "db:init": "node database/init.js",
     "dev": "npm --prefix backend run dev",
     "start": "npm --prefix backend start",
-    "build": "node deploy/build-release.js"
+    "build": "node deploy/build-release.js",
+    "vercel-build": "node deploy/vercel-build.js"
   }
 }
