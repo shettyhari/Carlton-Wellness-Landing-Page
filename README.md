@@ -5,6 +5,7 @@ Landing page for the Carlton Wellness franchise opportunity (EBG Group), with a 
 ## Project structure
 
 ```
+api/            Vercel serverless function for the lead form (api/leads.js)
 backend/        Express server: serves the page and the lead API (/api/leads)
 database/       SQLite schema and init script (local data goes in database/data/, git-ignored)
 deploy/         Release build script, PM2 config, nginx example and deploy guide
@@ -42,5 +43,15 @@ Configuration lives in `backend/.env` (see `backend/.env.example`).
 - Show projected payouts in rupees.
 
 ## Deploy
+
+### Vercel
+
+Import this repository into Vercel. No build settings are needed: `vercel.json` serves `frontend/` as a static site,
+and `api/leads.js` handles form submissions as a serverless function.
+
+Lead storage is not connected yet: each lead is validated and written to the Vercel function logs
+(Project → Logs, search `NEW_LEAD`). Add storage in `api/leads.js` when ready.
+
+### Own server (VPS)
 
 See [deploy/README.md](deploy/README.md).

@@ -4,7 +4,7 @@
   "private": true,
   "description": "Carlton Wellness franchise landing page: static frontend, lead-capture API and SQLite database",
   "engines": {
-    "node": ">=22.13"
+    "node": "22.x"
   },
   "scripts": {
     "install:all": "npm --prefix backend install",
