@@ -1,0 +1,16 @@
+{
+  "name": "carlton-wellness-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Carlton Wellness franchise landing page: static frontend, lead-capture API and SQLite database",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "install:all": "npm --prefix backend install",
+    "db:init": "node database/init.js",
+    "dev": "npm --prefix backend run dev",
+    "start": "npm --prefix backend start",
+    "build": "node deploy/build-release.js"
+  }
+}
