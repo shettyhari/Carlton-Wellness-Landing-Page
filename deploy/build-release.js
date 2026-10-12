@@ -18,7 +18,8 @@ fs.cpSync(path.join(root, "frontend"), out.frontend, { recursive: true });
 // Backend: source, manifest and env template (no node_modules, .env or local data)
 const backend = path.join(root, "backend");
 fs.cpSync(path.join(backend, "src"), path.join(out.backend, "src"), { recursive: true });
-for (const f of ["package.json", "package-lock.json", ".env.example"]) {
+fs.cpSync(path.join(backend, "api"), path.join(out.backend, "api"), { recursive: true });
+for (const f of ["package.json", "package-lock.json", ".env.example", "vercel.json"]) {
   if (fs.existsSync(path.join(backend, f))) fs.copyFileSync(path.join(backend, f), path.join(out.backend, f));
 }
 // Schema travels with the backend so release/ is self-contained

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "vercel-build": "node ../deploy/vercel-build.js"
+    "vercel-build": "node -e \"const fs=require('fs');fs.rmSync('public',{recursive:true,force:true});fs.cpSync('../frontend','public',{recursive:true});if(!fs.existsSync('public/index.html'))process.exit(1);console.log('Copied ../frontend to public')\""
   },
   "dependencies": {
     "express": "^4.21.2"
