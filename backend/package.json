@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+    "dev": "node --watch src/server.js",
+    "vercel-build": "node ../deploy/vercel-build.js"
   },
   "dependencies": {
     "express": "^4.21.2"
